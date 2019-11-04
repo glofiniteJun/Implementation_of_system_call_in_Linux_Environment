@@ -1,0 +1,63 @@
+//유저 Application 실행화면
+osta@osta-VirtualBox:~/Desktop$ ./my_stack_syscall_user_app 
+This is your stack user application utilizing system call.
+Please enter the number of following operation: 1. Push  2. Pop  3. Quit
+operation number: 1
+Push: 3
+Please enter the number of following operation: 1. Push  2. Pop  3. Quit
+operation number: 1
+Push: 2
+Please enter the number of following operation: 1. Push  2. Pop  3. Quit
+operation number: 1
+Push: 1
+Please enter the number of following operation: 1. Push  2. Pop  3. Quit
+operation number: 2
+Pop: 1
+Please enter the number of following operation: 1. Push  2. Pop  3. Quit
+operation number: 2
+Pop: 2
+Please enter the number of following operation: 1. Push  2. Pop  3. Quit
+operation number: 2
+Pop: 3
+Please enter the number of following operation: 1. Push  2. Pop  3. Quit
+operation number: 2
+Stack Underflow
+
+
+//dmesg에서의 실행화면
+osta@osta-VirtualBox:~$ dmesg -w
+[  663.709769] 
+                Push 3 
+[  663.709770] Stack Top ----------
+[  663.709771] 3
+[  663.709772] Stack Bottom -------
+[  665.556223] 
+                Push 2 
+[  665.556224] Stack Top ----------
+[  665.556225] 2
+[  665.556226] 3
+[  665.556227] Stack Bottom -------
+[  667.568290] 
+                Push 1 
+[  667.568291] Stack Top ----------
+[  667.568292] 1
+[  667.568292] 2
+[  667.568293] 3
+[  667.568294] Stack Bottom -------
+[  668.353372] 
+                Pop 1 
+[  668.353373] Stack Top ----------
+[  668.353374] 2
+[  668.353375] 3
+[  668.353376] Stack Bottom -------
+[  668.766157] 
+                Pop 2 
+[  668.766159] Stack Top ----------
+[  668.766159] 3
+[  668.766160] Stack Bottom -------
+[  669.221239] 
+                Pop 3 
+[  669.221240] Stack Top ----------
+[  669.221241] Stack Bottom -------
+[  669.746153] 
+                STACK UNDERFLOW 
